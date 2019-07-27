@@ -97,10 +97,10 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "shop1",
-        'USER': 'root',
-        'PASSWORD': "416798Gao!",
-        'HOST': "139.199.123.96",
+        'NAME': "shop",
+        'USER': 'test',
+        'PASSWORD': "******",
+        'HOST': "127.0.0.1",
         "OPTIONS": {"init_command": "SET default_storage_engine=INNODB;"}
     }
 }

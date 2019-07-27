@@ -11,6 +11,6 @@
 
 ### 接口开放与调试
 
-- 前端地址：https://shop.gaozhe.top/dist/
+- 前端地址：http://mall.gaozhe.top/dist/
 - 后台接口地址为：https://lab.gaozhe.top/
-- 由于服务器带宽过小，因此服务器利用drf设置了 100/day/per_ip 的访问限制
+- 由于服务器带宽过小，因此服务器利用设置了 100/day/per_ip 的访问限制

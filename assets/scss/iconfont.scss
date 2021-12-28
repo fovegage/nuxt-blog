@@ -1,0 +1,153 @@
+// 字体图标
+@font-face {
+  font-family: 'iconfont';  /* project id 994113 */
+  src: url('//at.alicdn.com/t/font_994113_26x7ecyei4d.eot');
+  src: url('//at.alicdn.com/t/font_994113_26x7ecyei4d.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_994113_26x7ecyei4d.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_994113_26x7ecyei4d.woff') format('woff'),
+  url('//at.alicdn.com/t/font_994113_26x7ecyei4d.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_994113_26x7ecyei4d.svg#iconfont') format('svg');
+}
+
+.iconfont{
+  vertical-align: bottom;
+  font-family: "iconfont" !important;
+  font-size: 14px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$iconMap         : (
+  "home"        : "\e611",
+  "about"        : "\e602",
+  "go"           : "\e659",
+  "struct"       : "\e790",
+  "html"         : "\e78c",
+  "message-f"    : "\e667",
+  "link"         : "\e6af",
+  "link2"        : "\e622",
+  "time"         : "\e6c1",
+  "time1"        : "\e62a",
+  "date"         : "\e630",
+  "good"         : "\e69c",
+  "bad"          : "\e609",
+  "hot"          : "\e688",
+  "hot1"         : "\e6a0",
+  "tag"          : "\e636",
+  "tag1"         : "\e738",
+  "back-top"     : "\e633",
+  "menu"         : "\e621",
+  "search"       : "\e60e",
+  "arrow-top"    : "\e633",
+  "arrow-right"  : "\e65f",
+  "arrow-bottom" : "\e626",
+  "arrow-left"   : "\e660",
+  "arrow-right-f": "\e757",
+  "arrow-right-d": "\e62b",
+  "close"        : "\e713",
+  "close-f"      : "\e713",
+  "success-f"    : "\e610",
+  "info-f"       : "\e606",
+  "tips-f"       : "\e628",
+  "notice1"      : "\e629",
+  "notice2"      : "\e6df",
+  "count"        : "\e660",
+  "kxsw"        : "\e6f6",
+  "rly"      : "\e64c",
+  "smp"      : "\e62c",
+  "picture"      : "\e604",
+  "upload-img1"  : "\e69d",
+  "upload-img2"  : "\e621",
+  "expression"   : "\e600",
+  "code"         : "\e7ae",
+  "note1"        : "\e60d",
+  "note2"        : "\e617",
+  "case"         : "\e678",
+  "tool"         : "\e627",
+  "life1"        : "\e65a",
+  "book"         : "\e63e",
+  "software"     : "\e62a",
+  "download"    : "\e6bd",
+  "download1"    : "\e71e",
+  "download2"    : "\e637",
+  "zjpc"    : "\e624",
+  "loading"      : "\e614",
+  "star"         : "\e664",
+  "eye"          : "\e62f",
+  "reward"       : "\e604",
+  "html5"        : "\eb10",
+  "html5-f"      : "\e602",
+  "css"         : "\e605",
+  "js"         : "\e810",
+  "css3-f"       : "\e7c8",
+  "vue"          : "\e686",
+  "react"        : "\e64d",
+  "angular-f"    : "\e615",
+  "bootstrap"  : "\e683",
+  "javascript-f" : "\e635",
+  "nodejs"       : "\e71d",
+  "sass"         : "\e616",
+  "less"         : "\e66a",
+  "php"          : "\e787",
+  "java"         : "\e639",
+  "python"       : "\e690",
+  "mongodb"      : "\e63e",
+  "mysql"        : "\e667",
+  "redis"        : "\e669",
+  "elm"        : "\e722",
+  "webpack"      : "\e65c",
+  "gulp"         : "\e958",
+  "git"          : "\eaf5",
+  "xiaochengxu"  : "\e71f",
+  "wordpress"    : "\e65b",
+  "aliyun"       : "\e625",
+  "twitter-f"    : "\e603",
+  "apple-f"      : "\e76a",
+  "android-f"    : "\e623",
+  "linux"        : "\e69b",
+  "databases"    : "\e677",
+  "server"       : "\e60d",
+  "qq-f"         : "\e624",
+  "wechat-f"     : "\e63d",
+  "sina"         : "\e620",
+  "github"       : "\e7ab",
+  "github-f"     : "\e691",
+  "psql"     : "\e7d6",
+  "k8s"     : "\e9ef",
+  "wechat"     : "\e625",
+  "author"     : "\e67b",
+  "nginx"     : "\e63c",
+  "docker"     : "\e616",
+  'data': "\e61a",
+  'ai': "\e609",
+  'deep': "\e607",
+  'machine': "\e671",
+  'server1': "\e606",
+  'suan': "\e64c",
+  'centos': "\e64b",
+);
+
+@each $key, $value in $iconMap {
+  @if $key == "loading" {
+    .icon-#{$key} {
+      display: inline-block;
+      animation: rotating 2s linear infinite;
+      &:before {
+        content: "#{$value}";
+      }
+    }
+  }
+  @else {
+    .icon-#{$key}:before {
+      content: "#{$value}";
+    }
+  }
+}
+
+@keyframes rotating {
+  to {
+    transform: rotateZ(360deg);
+  }
+}

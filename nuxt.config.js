@@ -112,88 +112,88 @@ export default {
     gzip: true, // 生成 .xml.gz 压缩的 sitemap
     generate: false, // 允许使用 nuxt generate 生成
     // 排除不要页面
-    exclude: [
-      '/404',
-      '/page',
-      '/details',
-      '/article',
-      '/tags',
-      '/category',
-      '/search'
-    ],
+    // exclude: [
+    //   '/404',
+    //   '/page',
+    //   '/details',
+    //   '/article',
+    //   '/tags',
+    //   '/category',
+    //   '/search'
+    // ],
     // 页面路由
-    routes(callback) {
-      axios.all([
-        // blog 分类
-        axios.get(apiurl, {
-          params: {
-            type: 2
-          }
-        }),
-        // 文章列表
-        axios.get(apiurl, {
-          params: {
-            type: 2,
-            page: 1,
-            per_page: 100,
-            _embed: true
-          },
-          data: {progress: false}
-        }),
-        // 标签
-        axios.get(apiurl, {
-          params: {
-            type: 2
-          }
-        })
-
-      ]).then(axios.spread(function (menu, posts, info) {
-        let now = new Date();
-        now.setHours(now.getHours(), now.getMinutes() - now.getTimezoneOffset());
-        let indexRoutes = [
-          {
-            url: '/',
-            changefreq: 'daily',
-            priority: 1,
-            lastmodISO: now.toISOString()
-          }
-        ]
-        let menuRoutes = menu.data.map((data) => {
-          let url = ''
-          if (data.ctype === 1) {
-            url = '/category/1?type=' + data.id + '&title=' + data.cname
-          }
-          if (data.ctype === 2) {
-            url = '/page/' + data.id
-          }
-          return {
-            url: url,
-            changefreq: 'monthly',
-            priority: 0.8,
-            lastmodISO: data.add_time
-          }
-        });
-        let postsRoutes = posts.data.results.map((data) => {
-          return {
-            url: '/details/' + data.id,
-            changefreq: 'daily',
-            priority: 0.9,
-            lastmodISO: data.update_at
-          }
-        });
-        let tagsRoutes = info.data[0].blog_tag.map((data) => {
-          return {
-            url: `/tags/1?type=${data.id}&title=${data.tname}`,
-            changefreq: 'weekly',
-            priority: 0.7,
-            lastmodISO: data.add_time
-          }
-        })
-        // 用 concat 進行合併
-        callback(null, indexRoutes.concat(menuRoutes, postsRoutes, tagsRoutes));
-      }), function (err) {
-        throw (err);
-      });
-    }
+    // routes(callback) {
+    //   axios.all([
+    //     // blog 分类
+    //     axios.get(apiurl, {
+    //       params: {
+    //         type: 2
+    //       }
+    //     }),
+    //     // 文章列表
+    //     axios.get(apiurl, {
+    //       params: {
+    //         type: 2,
+    //         page: 1,
+    //         per_page: 100,
+    //         _embed: true
+    //       },
+    //       data: {progress: false}
+    //     }),
+    //     // 标签
+    //     axios.get(apiurl, {
+    //       params: {
+    //         type: 2
+    //       }
+    //     })
+    //
+    //   ]).then(axios.spread(function (menu, posts, info) {
+    //     let now = new Date();
+    //     now.setHours(now.getHours(), now.getMinutes() - now.getTimezoneOffset());
+    //     let indexRoutes = [
+    //       {
+    //         url: '/',
+    //         changefreq: 'daily',
+    //         priority: 1,
+    //         lastmodISO: now.toISOString()
+    //       }
+    //     ]
+    //     let menuRoutes = menu.data.map((data) => {
+    //       let url = ''
+    //       if (data.ctype === 1) {
+    //         url = '/category/1?type=' + data.id + '&title=' + data.cname
+    //       }
+    //       if (data.ctype === 2) {
+    //         url = '/page/' + data.id
+    //       }
+    //       return {
+    //         url: url,
+    //         changefreq: 'monthly',
+    //         priority: 0.8,
+    //         lastmodISO: data.add_time
+    //       }
+    //     });
+    //     let postsRoutes = posts.data.results.map((data) => {
+    //       return {
+    //         url: '/details/' + data.id,
+    //         changefreq: 'daily',
+    //         priority: 0.9,
+    //         lastmodISO: data.update_at
+    //       }
+    //     });
+    //     let tagsRoutes = info.data[0].blog_tag.map((data) => {
+    //       return {
+    //         url: `/tags/1?type=${data.id}&title=${data.tname}`,
+    //         changefreq: 'weekly',
+    //         priority: 0.7,
+    //         lastmodISO: data.add_time
+    //       }
+    //     })
+    //     // 用 concat 進行合併
+    //     callback(null, indexRoutes.concat(menuRoutes, postsRoutes, tagsRoutes));
+    //   }), function (err) {
+    //     throw (err);
+    //   });
+    // }
   }
 }

@@ -1,27 +1,11 @@
 const axios = require('axios');
-// const COS = require('cos-js-sdk-v5');
-// var cos = new COS({
-//   SecretId: 'AKIDfT2PZUo9rJYaOyb7htrzxiGKRTIsIUov',
-//   SecretKey: '1ZHuKVDEBvPHYmmWY6ey73lGWVFm58ew'
-// });
-// const qiniuPlugin = cos.putObject({
-//   Bucket: 'img-1301479650',
-//   Region: 'ap-shanghai',
-//   Key: '/_nuxt/',
-//   StorageClass: 'STANDARD',
-//   Body: '/_nuxt/',
-//   onProgress: function (progressData) {
-//     console.log(JSON.stringify(progressData));
-//   }
-// }, function (err, data) {
-//   console.log(err || data);
-// })
-const apiurl = 'http://172.17.0.1:8004';
+
+const apiurl = 'http://148.70.157.111:8004';
 export default {
   mode: 'universal',
 
   head: {
-    title: '嘉美伯爵 | 高哲个人博客',
+    title: '自由之书 | 现代版外网百科全书',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'},
@@ -35,8 +19,9 @@ export default {
       {src: '/js/prism.js'},
       // 百度主推文章收录用
       {src: 'https://zz.bdstatic.com/linksubmit/push.js'},
-      // 加入百度统计js，使用时自行添加为自己的
+      // baidu analysis
       {src: 'https://hm.baidu.com/hm.js?75fd7a062cf64d7693f4f8422db3ffbf'}
+      // google analysis
     ]
   },
 
@@ -78,7 +63,7 @@ export default {
   build: {
     transpile: [/^element-ui/],
     extractCSS: true,
-    vendors: ['@nuxtjs/axios', 'element-ui'],
+    vendors: ['@nuxtjs/axios', 'element-ui']
     // extend (config, { isDev, isClient }) {
     //   if (isClient && !isDev) {
     //     config.output.futureEmitAssets = false

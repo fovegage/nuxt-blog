@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-django",
+  "name": "nuxt-blog",
   "version": "1.0.0",
-  "description": "Django Nuxt project",
+  "description": "Nuxt blog project",
   "author": "fovegage <fovegage@gmail.com>",
   "private": true,
   "scripts": {

@@ -105,12 +105,12 @@ export default {
     domain: 'https://www.gaozhe.net',
     type: 2
   },
-  sitemap: {
-    path: '/sitemap.xml', // sitemap文件名，不用改
-    hostname: 'https://www.gaozhe.net', // 网址
-    cacheTime: 60 * 60 * 6, // 更新频率，只在 generate: false有用
-    gzip: true, // 生成 .xml.gz 压缩的 sitemap
-    generate: false, // 允许使用 nuxt generate 生成
+  // sitemap: {
+    // path: '/sitemap.xml', // sitemap文件名，不用改
+    // hostname: 'https://www.gaozhe.net', // 网址
+    // cacheTime: 60 * 60 * 6, // 更新频率，只在 generate: false有用
+    // gzip: true, // 生成 .xml.gz 压缩的 sitemap
+    // generate: false, // 允许使用 nuxt generate 生成
     // 排除不要页面
     // exclude: [
     //   '/404',
@@ -195,5 +195,5 @@ export default {
     //     throw (err);
     //   });
     // }
-  }
+  // }
 }

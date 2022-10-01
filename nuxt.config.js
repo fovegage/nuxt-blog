@@ -1,5 +1,3 @@
-import * as path from "path";
-
 const axios = require('axios');
 
 const apiurl = 'http://148.70.157.111:8004';
@@ -67,14 +65,14 @@ export default {
     extractCSS: true,
     vendors: ['@nuxtjs/axios', 'element-ui']
   },
-  // proxy: {
-  //   '/': {
-  //     target: apiurl,
-  //     pathRewrite: {
-  //       '^/api': ''
-  //     }
-  //   }
-  // },
+  proxy: {
+    '/introduce': {
+      target: apiurl,
+      pathRewrite: {
+        '^/introduce': '/'
+      }
+    }
+  },
   env: {
     baseUrl: apiurl
   },
@@ -84,7 +82,7 @@ export default {
   },
   sitemap: {
     path: '/sitemap.xml', // sitemap文件名，不用改
-    hostname: 'https://www.gaozhe.net', // 网址
+    hostname: 'https://www.vpnbook.cn', // 网址
     cacheTime: 60 * 60 * 6, // 更新频率，只在 generate: false有用
     gzip: true, // 生成 .xml.gz 压缩的 sitemap
     generate: false, // 允许使用 nuxt generate 生成

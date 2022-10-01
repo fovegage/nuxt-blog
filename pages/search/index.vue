@@ -148,7 +148,7 @@ export default {
   }
 
   // 翻页
-  /deep/ .el-pagination {
+  ::v-deep .el-pagination {
     .el-pagination__jump {
       display: none;
     }

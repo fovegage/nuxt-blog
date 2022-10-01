@@ -203,7 +203,7 @@ $padding: 10px;
       background: #fff;
       font-size: 18px;
 
-      /deep/ .iconfont {
+      ::v-deep .iconfont {
         font-size: 18px;
       }
     }

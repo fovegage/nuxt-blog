@@ -13,7 +13,7 @@ export const mutations = {
 export const actions = {
   async getPageDetail ({ commit }, id) {
     try {
-      let { data } = await this.$axios.$get(`${process.env.baseUrl}/introduce/${id}`, {
+      let data = await this.$axios.$get(`${process.env.baseUrl}/introduce/${id}`, {
         params: {
           type: site.site.type
         },

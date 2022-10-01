@@ -102,7 +102,7 @@ export default {
     baseUrl: apiurl
   },
   site: {
-    domain: 'https://www.gaozhe.net',
+    domain: 'https://www.vpnbook.cn',
     type: 2
   },
   // sitemap: {

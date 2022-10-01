@@ -41,25 +41,25 @@ export const actions = {
   // 获取公用信息
   async nuxtServerInit ({ commit }) {
     try {
-      let { data: globalInfo } = await this.$axios.$get(`${process.env.baseUrl}/siteinfo/`, {
+      let globalInfo = await this.$axios.$get(`${process.env.baseUrl}/siteinfo/`, {
         params: {
           type: site.site.type
         },
         data: { progress: false }
       })
-      let { data: blogData } = await this.$axios.$get(`${process.env.baseUrl}/blog/`, {
+      let blogData = await this.$axios.$get(`${process.env.baseUrl}/blog/`, {
         params: {
           blog_type: site.site.type
         },
         data: { progress: false }
       })
-      let { data: menu } = await this.$axios.$get(`${process.env.baseUrl}/categories/`, {
+      let menu = await this.$axios.$get(`${process.env.baseUrl}/categories/`, {
         params: {
           type: site.site.type,
           ordering: 'index'
         }
       });
-      let { data: intro } = await this.$axios.$get(`${process.env.baseUrl}/introduce/`, {
+      let intro = await this.$axios.$get(`${process.env.baseUrl}/introduce/`, {
         params: {
           type: site.site.type
         }
@@ -78,6 +78,7 @@ export const actions = {
       //   let [, banner1, banner2, banner3] = globalInfo.banner.list
       //   globalInfo.banner.small = [banner1, banner2, banner3]
       // }
+      // console.log(globalInfo, "000000000000000000000")
       let result = {
         info: globalInfo[0],
         menu: menu,

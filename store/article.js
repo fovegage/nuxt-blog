@@ -81,7 +81,7 @@ export const actions = {
   async getArticleList ({ rootState, commit }, requestData) {
     try {
       // ${process.env.baseUrl}
-      let { data } = await this.$axios.$get(`${process.env.baseUrl}/posts`, {
+      let data = await this.$axios.$get(`${process.env.baseUrl}/posts`, {
         params: requestData,
         data: { progress: false }
       });

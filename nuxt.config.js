@@ -43,7 +43,7 @@ export default {
     '~/plugins/axios',
     {src: '~/plugins/element-ui', ssr: true},
     {src: '~/plugins/message', ssr: false},
-    {src: '~/plugins/icon', ssr: true}
+    {src: '~/plugins/icon', ssr: true},
     // { src: '~/plugins/common', ssr: false }
   ],
 
@@ -57,7 +57,6 @@ export default {
 
   axios: {
     proxy: true,
-    prefix: '/',
     credentials: true
   },
   build: {
@@ -68,9 +67,9 @@ export default {
   proxy: {
     '/introduce': {
       target: apiurl,
-      pathRewrite: {
-        '^/introduce': '/'
-      }
+      // pathRewrite: {
+      //   '^/introduce': '/'
+      // }
     }
   },
   env: {

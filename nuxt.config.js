@@ -3,7 +3,6 @@ const axios = require('axios');
 const apiurl = 'http://148.70.157.111:8004';
 export default {
   mode: 'universal',
-
   head: {
     title: '自由之书 | 现代版外网百科全书',
     meta: [
